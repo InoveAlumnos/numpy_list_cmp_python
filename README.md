@@ -3,7 +3,7 @@ Inove Escuela de Código\
 info@inove.com.ar\
 Web: [Inove](http://inove.com.ar)
 
-# Bucles! [Python]
+# Numpy y compresión de listas! [Python]
 En este repositorio encontrarán los siguientes archivos:
 
 __Ejemplos que el profesor mostrará en clase__\
