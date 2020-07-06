@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-Bucles [Python]
+Numpy [Python]
 Ejercicios de clase
 ---------------------------
 Autor: Inove Coding School
