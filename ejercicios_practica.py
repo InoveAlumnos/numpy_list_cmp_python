@@ -29,6 +29,22 @@ def ej2():
     print('Comenzamos a ponernos serios!')
 
     '''
+    Empecemos a jugar con las listas y su métodos, el objetivo
+    es realizar el código lo más simple ordenado y limpio posible,
+    no utilizar bucles donde no haga falta, no "re inventar" una función
+    que ya dispongamos de Python. El objetivo es:
+
+    1) Generar una lista 3 numéros aleatorios (pueden repetirse),
+       que estén comprendidos entre 1 y 10 inclusive
+    2) Luego de generar la lista sumar los números y ver si el resultado
+       de la suma es menor o igual a 21
+       a) Si el número es menor o igual a 21 se imprime en pantalla
+          la suma y los números recoletados
+       b) Si el número es mayor a 21 se debe tirar la lista y volver
+          a generar una nueva, repetir este proceso hasta cumplir la
+        condicion "a"
+
+    Realizar este proceso iterativo hasta cumplir el objetivo
     '''
 
 
@@ -39,6 +55,16 @@ def ej3():
     # una función senoidal, dado "X" como el conjunto
     # de valores que deben someter a la función "sin"
     
+    # Conjunto de valores "X" en un array
+    x = np.arange(0,2*np.pi,0.1)
+
+    # Utilizar la función np.sin para someter cada valor de "X",
+    # obtenga el array "y_nump" que tenga los resultados
+    # NO uUtilizar compresión de listas, solo utilice la
+    # funcion de numpy "sin"
+    
+    # y_nump =
+
     # Conjunto de valores "X" en una lista
     x = list(np.arange(0,2*np.pi,0.1))
 
@@ -48,14 +74,11 @@ def ej3():
 
     # y_list =
 
-    # Conjunto de valores "X" en un arrany
-    x = np.arange(0,2*np.pi,0.1)
 
-    # Utilizar compresión de listas para obtener la lista    
-    # "y_list" que tenga todos los valores obtenidos como resultado
-    # de someter cada valor de "X" a la función np.sin
-    
-    # y_nump =
+    # Este es un ejemplo práctico de cuando es útil usar numpy,
+    # basicamente siempre que deseen utilizar una función matemática
+    # que esté definida en numpy NO necesitaran un bucle o compresion
+    # de listas para obtener el resultado de un monton de datos a la vez.
 
 
 def ej4():
@@ -90,6 +113,23 @@ def ej5():
     print("Ahora sí! buena suerte :)")
 
     '''
+    Black jack! [o algo parecido :)]
+
+    El objetivo es realizar una aproximación al juego de black jack,
+    el objetivo es generar una lista de 2 números aleatorios
+    entre 1 al 10 inclusive, y mostrar los "números" al usuario.
+    El usuario debe indicar al sistema si desea sacar un más
+    números para sumarlo a la lista o no sacar más
+    A medida que el usuario vaya sacando números aleatorios que se suman
+    a su lista se debe ir mostrando en pantalla la suma
+    total de los números hasta el momento.
+    Cuando el usuario no desee sacar más números o cuando el usuario
+    haya superado los 21 (como la suma de todos) se termina la jugada
+    y se presenta el resultado en pantalla
+
+    BONUS Track: Realizar las modificaciones necesarias para que jueguen
+    dos jugadores y compitan para ver quien sacá la suma de números
+    más cercanos a 21 sin pasarse!
     '''
 
 

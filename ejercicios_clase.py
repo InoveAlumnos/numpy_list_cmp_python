@@ -24,7 +24,7 @@ def ej1():
     # Realizar una funcion lambda que eleve al cuadrado
     # el número pasado como parámetro
     
-    # potencia_2 = lambda......
+    # potencia_2 = lambda x:......
 
     # List de string
     numeros = [1, -5, 4, 3]
@@ -35,6 +35,7 @@ def ej1():
     # en una nueva lista
     # Nota: realizar la lambda expression "in line", es decir,
     # no declarar la lambda fuera del map sino diretamente dentro
+    # Copiar la lambda creada en el paso anterior dentro del map
 
     # numeros_potencia = list(map....)
 
@@ -55,17 +56,51 @@ def ej2():
     # El resultado (el len de cada palabra) se debe ir almacenando
     # en una nueva lista
     # Nota: realizar la lambda expression "in line"
+    # Copiar la lambda creada en el paso anterior dentro del map
 
     # palabras_len = list(map....)
 
 
 def ej3():
     # Práctica de compresion de listas
+    # Generar una lista a partir de compresion de listas,
+    # esta lista generada deberá tener un tamaño de 11
+    # números, conteniendo del 0 al 10 inclusive
+
+    # lista_0_10 = [......]
+
+    # Generar una lista a partir de compresion de listas,
+    # esta lista generada deberá contener la tabla del 5,
+    # desde el múltiplo 0 al múltiplo 10
+    # El resultado esperado es:
+    # [0 5 10 15 20 25 30 35 40 45 50]
+    # Utilizar compresion de listas para generar essa lista
+
+    # tabla_5 = [......]
+
+
+    # Generar una lista a partir de compresion de listas,
+    # esta lista generada deberá contener 10 números aleatorios,
+    # estos números deberán estar entre el rango 1 al 30 representando
+    # números posibles de un mes (los números pueden repetirse)
+
+    # dias_mes = [.....]
+
     pass
 
 
 def ej4():
     # Utilizar compresion de listas con condicionales
+
+    # Utilizar compresion de listas para convertir
+    # una lista de números como str en números tipo int
+    # sería un conversor string --> int
+    # Ojo! Tener cuidado con lo string/caracteres
+    # que no son números
+    list_numeros_str = ['5', '-2', '3', '', '7', 'NaN']
+
+    #lista_numeros_int = [.....]
+
     pass
 
 
