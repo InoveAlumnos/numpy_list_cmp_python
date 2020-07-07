@@ -183,7 +183,7 @@ def lambda_vs_bucle():
     print('Lambda vs Bucle x{:.2f}'.format(bucle_time_ms/list_time_ms))
 
 
-def compresion_listas():
+def comprension_listas():
     print('Práctica con compresión de listas')
 
     # Generar una lista a partir de
@@ -222,8 +222,8 @@ def compresion_listas():
     print(lista)
 
 
-def compresion_listas_vs_bucle():
-    print('Compresion de listas vs bucles')
+def comprension_listas_vs_bucle():
+    print('Comprension de listas vs bucles')
     # Deseamos crear una lista de números pares
     # que contenga todos los números del 0 al 1000000 inclusive
     rango = range(500001)
@@ -242,13 +242,13 @@ def compresion_listas_vs_bucle():
 
     time1 = time.time()
     # ----------------------------
-    # Método con compresion
+    # Método con comprensión
     lista_pares_comp = [2*x for x in rango]
     # ----------------------------
     time2 = time.time()
     list_time_ms = (time2-time1)*1000
-    print('Compresión time: {:.2f}ms'.format(list_time_ms))
-    print('Compresion vs Bucle x{:.2f}'.format(bucle_time_ms/list_time_ms))
+    print('Comprension time: {:.2f}ms'.format(list_time_ms))
+    print('Comprension vs Bucle x{:.2f}'.format(bucle_time_ms/list_time_ms))
 
 
 if __name__ == '__main__':
@@ -261,5 +261,5 @@ if __name__ == '__main__':
     # ----------------------------
     expresion_map_lambda()
     lambda_vs_bucle()
-    compresion_listas()
-    compresion_listas_vs_bucle()
+    comprension_listas()
+    comprension_listas_vs_bucle()
