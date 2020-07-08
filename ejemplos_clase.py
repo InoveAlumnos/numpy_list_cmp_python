@@ -197,12 +197,28 @@ def comprension_listas():
     print('Generador de listas')
     # Generar una nueva lista utilizando los datos
     # del rango para generar nuevos
+
+    # Método tradicional con bucle
+    lista = []
+    for x in range(10):
+        valor = x**2
+        lista.append(valor)
+
+    # Método con comprensión de listas
     lista = [x**2 for x in range(10)]
     print(lista)
 
     # Generar una nueva lista, utilizar el rango para
     # iterar cierta cantidad de veces (definir el tamaño)
     # de la lista, y generar datos en cada iteración.
+
+    # Método tradicional con bucle
+    lista = []
+    for x in range(5):
+        valor = random.randint(1, 6)
+        lista.append(valor)
+
+    # Método con comprensión de listas
     lista = [random.randint(1, 6) for x in range(5)]
     print(lista)
 
@@ -210,6 +226,18 @@ def comprension_listas():
     # Generar una lista que tome los números pares
     # y reemplace los números impares por "0"
     numeros = [1, 2, 4, 6, 8, 3, 5]
+
+    # Método tradicional con bucle
+    lista = []
+    for x in numeros:
+        if(x % 2) == 0:
+            valor = x
+        else:
+            valor = 0
+        lista.append(valor)
+    # lista [0, 2, 4, 6, 8, 0, 0]
+
+    # Método con comprensión de listas
     lista = [x if(x % 2) == 0 else 0 for x in numeros]
     # lista [0, 2, 4, 6, 8, 0, 0]
     print(lista)
@@ -217,6 +245,15 @@ def comprension_listas():
     # Generar una lista que solo tome los números pares
     # y descarte los números impares por "0"
     numeros = [1, 2, 4, 6, 8, 3, 5]
+
+    # Método tradicional con bucle
+    lista = []
+    for x in numeros:
+        if(x % 2) == 0:
+            lista.append(x)
+    # lista [2, 4, 6, 8]
+
+    # Método con comprensión de listas
     lista = [x for x in numeros if(x % 2) == 0]
     # lista [2, 4, 6, 8]
     print(lista)
@@ -283,8 +320,8 @@ def comprension_dataset():
 
     print('Del dataset original eliminar aquellas filas con "id" invalido\
  y filtrar las columnas deseadas')
-    # Acá ponemos todo a prueba! solo se está dejando como salvedad que si existe
-    # la key "id" debe existir la key "name"
+    # Acá ponemos todo a prueba! solo se está dejando como salvedad
+    # que si existe la key "id" debe existir la key "name"
     lista_filtrada_reducida = [{'name': x['name']} for x in dataset if x.get('id', '').isdigit() is True]
     print(lista_filtrada_reducida)
 
