@@ -251,6 +251,44 @@ def comprension_listas_vs_bucle():
     print('Comprension vs Bucle x{:.2f}'.format(bucle_time_ms/list_time_ms))
 
 
+def comprension_dataset():
+    print('El poder de la comprension en datasets!')
+
+    dataset = [{'id': '123', 'name': 'Inove'},
+               {'id': '', 'name': 'NaN'},
+               {'ipo': 'sfa'},
+               {'id': '456', 'name': 'Python'},
+               {'id': '789', 'name': 'Programador'},
+               ]
+
+    print('Crear un dataset a partir de otro, sin filtrar o modificar datos')
+    lista = [x for x in dataset]
+    print(lista)
+
+    print('Del dataset original quedarnos unicamente con la columna nombres')
+    # Ojo! Se podría usar x['id'] pero en el dataset puede existir el caso
+    # donde no exista una fila con la key "id" y por eso se utiliza "get"
+    # Cuando se utiliza "x.get" se puede especificar como segundo parámetro
+    # que deseamos que retorno en caso de no encontrar la key buscada.
+    # En este caso se esta eligiendo devolver un string vacio '' en caso
+    # de no encontrar la key "id"
+    lista_reducida = [{'id': x.get('id', '')} for x in dataset]
+    print(lista_reducida)
+
+    print('Del dataset original eliminar aquellas filas con "id" invalido')
+    # Utilizamos "isdigit" para evaluar si el string tiene forma de numero,
+    # en caso de ser un caracter o un string vacio "isdigit" retorna "False"
+    lista_filtrada = [x for x in dataset if x.get('id', '').isdigit() is True]
+    print(lista_filtrada)
+
+    print('Del dataset original eliminar aquellas filas con "id" invalido\
+ y filtrar las columnas deseadas')
+    # Acá ponemos todo a prueba! solo se está dejando como salvedad que si existe
+    # la key "id" debe existir la key "name"
+    lista_filtrada_reducida = [{'name': x['name']} for x in dataset if x.get('id', '').isdigit() is True]
+    print(lista_filtrada_reducida)
+
+
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
     # ----------------------------
@@ -263,3 +301,5 @@ if __name__ == '__main__':
     lambda_vs_bucle()
     comprension_listas()
     comprension_listas_vs_bucle()
+    # Bonus Track - comprension listas + diccionarios
+    comprension_dataset()
