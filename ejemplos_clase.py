@@ -4,7 +4,7 @@ Numpy [Python]
 Ejemplos de clase
 ---------------------------
 Autor: Inove Coding School
-Version: 1.1
+Version: 1.2
 
 Descripcion:
 Programa creado para mostrar ejemplos prácticos de los visto durante la clase
@@ -12,7 +12,7 @@ Programa creado para mostrar ejemplos prácticos de los visto durante la clase
 
 __author__ = "Inove Coding School"
 __email__ = "alumnos@inove.com.ar"
-__version__ = "1.1"
+__version__ = "1.2"
 
 import numpy as np
 import time
@@ -191,8 +191,8 @@ def comprension_listas():
     # de "numeros"
     numeros = [1, -5, -6, 4]
     numeros_cmp = [2*x for x in numeros]
-    print(numeros)
-    # numeros_cmp= [2, -10, 12, 8]
+    print(numeros_cmp)
+    # numeros_cmp= [2, -10, -12, 8]
 
     print('Generador de listas')
     # Generar una nueva lista utilizando los datos

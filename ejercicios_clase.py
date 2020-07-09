@@ -4,7 +4,7 @@ Numpy [Python]
 Ejercicios de clase
 ---------------------------
 Autor: Inove Coding School
-Version: 1.1
+Version: 1.2
 
 Descripcion:
 Programa creado para poner a prueba los conocimientos
@@ -13,7 +13,7 @@ adquiridos durante la clase
 
 __author__ = "Inove Coding School"
 __email__ = "alumnos@inove.com.ar"
-__version__ = "1.1"
+__version__ = "1.2"
 
 import numpy as np
 import math
@@ -26,9 +26,7 @@ def ej1():
     # el número pasado como parámetro
 
     # potencia_2 = lambda x:......
-
-    # List de string
-    numeros = [1, -5, 4, 3]
+    # pot_3 = potencia_2(3)
 
     # 2)
     # Utilice la función map para mapear una lambda expression
@@ -38,6 +36,9 @@ def ej1():
     # Nota: realizar la lambda expression "in line", es decir,
     # no declarar la lambda fuera del map sino diretamente dentro
     # Copiar la lambda creada en el paso anterior dentro del map
+
+    # List de string
+    numeros = [1, -5, 4, 3]
 
     # numeros_potencia = list(map....)
 
