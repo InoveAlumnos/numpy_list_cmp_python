@@ -82,6 +82,9 @@ def ej3():
     # El resultado esperado es:
     # [0 5 10 15 20 25 30 35 40 45 50]
     # Utilizar comprensión de listas para generar essa lista
+    # Lo esperable es que realicen una lista de 11 elementos,
+    # del 0 al 10 (como el ejer anterior) pero que cada
+    # elemento lo multipliquen x5.
 
     # tabla_5 = [......]
 
@@ -106,9 +109,14 @@ def ej4():
     # Ojo! Tener cuidado con lo string/caracteres
     # que no son números, utilizar condicionales para detectarlos
     # reemplazar dicho str "no numérico" por 0
-    list_numeros_str = ['5', '-2', '3', '', '7', 'NaN']
+    # TIP: Recomendamos ver el método "isdigit" de strings
+    # para aplicar en este caso.
+    list_numeros_str = ['5', '2', '3', '', '7', 'NaN']
 
-    # lista_numeros_int = [.....]
+
+    # ¿Ya terminaron el ejercicio? ¿Por qué no prueban
+    # hacer negativo alguno de los números de la lista?
+    # ¿Qué sucede con isdigit? Sorprendente no?    
 
 
 def ej5():
@@ -151,11 +159,13 @@ def ej6():
 
     # 1)
     # Calcular la suma de todos los elementos en el array
+    # utilizar el método "sum" de numpy
 
     # suma = ....
 
     # 2)
     # Calcular la diferencia de todos los elementos en el array
+    # utilizar el método "diff" de numpy
 
     # diferencia = ....
 
@@ -172,9 +182,9 @@ def ej6():
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
-    ej1()
+    #ej1()
     # ej2()
-    # ej3()
-    # ej4()
+    #ej3()
+    ej4()
     # ej5()
     # ej6()
