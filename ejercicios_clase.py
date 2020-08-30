@@ -36,8 +36,10 @@ def ej1():
     # Nota: realizar la lambda expression "in line", es decir,
     # no declarar la lambda fuera del map sino diretamente dentro
     # Copiar la lambda creada en el paso anterior dentro del map
+    # NOTA: No debe usar "potencia_2" dentro del map, debe colocar
+    # directamente la lambda.
 
-    # List de string
+    # Lista de numeros
     numeros = [1, -5, 4, 3]
 
     # numeros_potencia = list(map....)
@@ -52,7 +54,7 @@ def ej2():
     # len_string = lambda......
 
     # 2)
-    # List de string
+    # Lista de string
     palabras = ['Inove', 'casa', 'programacion']
 
     # Utilice la función map para mapear una lambda expression
@@ -62,6 +64,8 @@ def ej2():
     # en una nueva lista
     # Nota: realizar la lambda expression "in line"
     # Copiar la lambda creada en el paso anterior dentro del map
+    # NOTA: No debe usar "len_string" dentro del map, debe colocar
+    # directamente la lambda.
 
     # palabras_len = list(map....)
 
@@ -92,7 +96,10 @@ def ej3():
     # Generar una lista a partir de comprensión de listas,
     # esta lista generada deberá contener 10 números aleatorios,
     # estos números deberán estar entre el rango 1 al 30 representando
-    # números posibles de un mes (los números pueden repetirse)
+    # números posibles de un mes (los números pueden repetirse).
+    # NOTA: Importar le módulo random y utiliza randrange
+    # o randint para generar números aleatorios.
+    # https://docs.python.org/3/library/random.html
 
     # dias_mes = [.....]
 
