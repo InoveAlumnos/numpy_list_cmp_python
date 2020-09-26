@@ -81,8 +81,8 @@ def numpy_where_diff():
     l1 = list(range(top))
     v1 = np.asanyarray(l1)
 
-    where_v1 = np.where(v1 % 2, v1, 0)
-    # [0 2 0 4 0 6 0 8]
+    where_v1 = np.where((v1 % 2) == 0, v1, 0)
+    # [0 0 2 0 4 0 6 0 8]
 
     time1 = time.time()
     np.where(v1 % 2, v1, 0)
