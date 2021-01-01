@@ -12,120 +12,69 @@ Programa creado para mostrar ejemplos prácticos de los visto durante la clase
 
 __author__ = "Inove Coding School"
 __email__ = "alumnos@inove.com.ar"
-__version__ = "1.2"
+__version__ = "1.1"
 
 import numpy as np
 import time
 import random
 
-top = 5000000
 
-
-def metodos_numpy_vs_list():
-    print('Ejemplos de implementaciones con numpy vs list')
+def metodos_numpy():
+    print('Ejemplos de implementaciones con numpy')
     print('Método SUM')
-    v1 = np.arange(top)
-    l1 = list(range(top))
+    v1 = np.array([1, 5, -2, 10, 2])
 
-    time1 = time.time()
-    np.sum(v1)
-    time2 = time.time()
-    numpy_time_ms = (time2-time1)*1000
-    print('Numpy time: {:.2f}ms'.format(numpy_time_ms))
+    # Sumar todos los elementos de un array numpy
+    suma_total = np.sum(v1)
+    print('Suma total:', suma_total)
 
-    time1 = time.time()
-    sum(l1)
-    time2 = time.time()
-    list_time_ms = (time2-time1)*1000
-    print('List time: {:.2f}ms'.format(list_time_ms))
-    print('SUM: Numpy vs List x{:.2f}'.format(list_time_ms/numpy_time_ms))
+    # Calcular el promedio de todos los elementos de
+    # un array numpy
+    promedio = np.mean(v1)
+    print('Promedio:', promedio)
 
-    print('Método mean')
-    v1 = np.arange(top)
-    l1 = list(range(top))
-
-    time1 = time.time()
-    np.mean(v1)
-    time2 = time.time()
-    numpy_time_ms = (time2-time1)*1000
-    print('Numpy time: {:.2f}ms'.format(numpy_time_ms))
-
-    time1 = time.time()
-    sum(l1) / len(l1)
-    time2 = time.time()
-    list_time_ms = (time2-time1)*1000
-    print('List time: {:.2f}ms'.format(list_time_ms))
-    print('MEAN: Numpy vs List x{:.2f}'.format(list_time_ms/numpy_time_ms))
-
-    print('Método sort')
-    v1 = np.arange(top)
-    l1 = list(range(top))
-
-    time1 = time.time()
-    np.sort(v1)
-    time2 = time.time()
-    numpy_time_ms = (time2-time1)*1000
-    print('Numpy time: {:.2f}ms'.format(numpy_time_ms))
-
-    time1 = time.time()
-    l1.sort()
-    time2 = time.time()
-    list_time_ms = (time2-time1)*1000
-    print('List time: {:.2f}ms'.format(list_time_ms))
-    print('SORT: Numpy vs List x{:.2f}'.format(list_time_ms/numpy_time_ms))
+    # Ordenar todos los elementos de un array numpy
+    ordenados = np.sort(v1)
+    print('Array ordenado', ordenados)
 
 
 def numpy_where_diff():
     # Ejemplos de uso del método where y diff
     print('Método Where')
-    l1 = list(range(top))
+
+    # Crear un array numpy a partir de una lsita
+    l1 = list(range(10))
     v1 = np.asanyarray(l1)
 
-    where_v1 = np.where(v1 % 2, v1, 0)
-    # [0 2 0 4 0 6 0 8]
+    # Crear un nuevo array que solo tengo los numeros
+    # pares del array numy
+    # where(condicion, returno verdadero, retorno falso)
+    where_v1 = np.where((v1 % 2) == 0, v1, 0)
+    print(where_v1)
+    # [0 0 2 0 4 0 6 0 8]
 
-    time1 = time.time()
-    np.where(v1 % 2, v1, 0)
-    time2 = time.time()
-    numpy_time_ms = (time2-time1)*1000
-    print('Numpy time: {:.2f}ms'.format(numpy_time_ms))
 
-    time1 = time.time()
-    [x if x % 2 else 0 for x in l1]
-    time2 = time.time()
-    list_time_ms = (time2-time1)*1000
-    print('List time: {:.2f}ms'.format(list_time_ms))
-    print('WHERE: Numpy vs List x{:.2f}'.format(list_time_ms/numpy_time_ms))
+def numpy_mask():
+    # Ejemplos de uso de máscaras en numpy
+    print('Numpy Mask')
 
-    print('Método Diff')
+    # Crear un array numpy
     v1 = np.array([1, 2, 4, 7])
-    v1_diff = np.diff(v1)
-    # [2-1, 4-2, 7-4]
-    # [1 2 3]
-    print(v1_diff)
 
-    m = np.array([
-                 [1, 5],
-                 [3, 1],
-                 [5, 10]
-                 ])
-
-    m_diff_por_fila = np.diff(m)
-    # [[ 4]
-    #  [-2]
-    #  [ 5]]
-    print(m_diff_por_fila)
-
-    m_diff_por_columna = np.diff(m, axis=0)
-    # [[ 2 -4]
-    #  [ 2  9]]
-    print(m_diff_por_columna)
+    # Crear la máscara para solo quedarnos con
+    # los números pares
+    mask_par = (v1 % 2) == 0
+    v1_pares = v1[mask_par]
+    
+    print(v1_pares)
+    # [2 4]
 
 
 def expresion_map_lambda():
     print('Lambda expression y map')
     # Crear una funcion lambda que multiplique por 2
     # el valor pasado a la función
+
     mult_by_2 = lambda x: 2*x
     print(mult_by_2(3))  # resultado = 6
 
@@ -152,35 +101,11 @@ def expresion_map_lambda():
     print(numeros_lambda)
     # [2, -10, -12, 8]
 
-
-def lambda_vs_bucle():
-    print('lambda vs bucles')
-    # Deseamos crear una lista de números pares
-    # que contenga todos los números del 0 al 1000000 inclusive
-    rango = range(500001)
-
-    time1 = time.time()
-    # ----------------------------
-    # Método tradicional con bucle
+    # SI lo tuviera que hacer con bucles:
     lista_pares_bucle = []
-    for i in rango:
-        valor = 2*i
+    for numero in numeros:
+        valor = 2*numero
         lista_pares_bucle.append(valor)
-    # ----------------------------
-    time2 = time.time()
-    bucle_time_ms = (time2-time1)*1000
-    print('Bucle time: {:.2f}ms'.format(bucle_time_ms))
-
-    numeros = list(rango)
-    time1 = time.time()
-    # ----------------------------
-    # Método con map + lambda expression
-    lista_pares_lambda = list(map(lambda x: 2*x, numeros))
-    # ----------------------------
-    time2 = time.time()
-    list_time_ms = (time2-time1)*1000
-    print('List time: {:.2f}ms'.format(list_time_ms))
-    print('Lambda vs Bucle x{:.2f}'.format(bucle_time_ms/list_time_ms))
 
 
 def comprension_listas():
@@ -201,12 +126,8 @@ def comprension_listas():
     # Método tradicional con bucle
     lista = []
     for x in range(10):
-        valor = x**2
+        valor = 2*x
         lista.append(valor)
-
-    # Método con comprensión de listas
-    lista = [x**2 for x in range(10)]
-    print(lista)
 
     # Generar una nueva lista, utilizar el rango para
     # iterar cierta cantidad de veces (definir el tamaño)
@@ -259,35 +180,6 @@ def comprension_listas():
     print(lista)
 
 
-def comprension_listas_vs_bucle():
-    print('Comprension de listas vs bucles')
-    # Deseamos crear una lista de números pares
-    # que contenga todos los números del 0 al 1000000 inclusive
-    rango = range(500001)
-
-    time1 = time.time()
-    # ----------------------------
-    # Método tradicional con bucle
-    lista_pares_bucle = []
-    for i in rango:
-        valor = 2*i
-        lista_pares_bucle.append(valor)
-    # ----------------------------
-    time2 = time.time()
-    bucle_time_ms = (time2-time1)*1000
-    print('Bucle time: {:.2f}ms'.format(bucle_time_ms))
-
-    time1 = time.time()
-    # ----------------------------
-    # Método con comprensión
-    lista_pares_comp = [2*x for x in rango]
-    # ----------------------------
-    time2 = time.time()
-    list_time_ms = (time2-time1)*1000
-    print('Comprension time: {:.2f}ms'.format(list_time_ms))
-    print('Comprension vs Bucle x{:.2f}'.format(bucle_time_ms/list_time_ms))
-
-
 def comprension_dataset():
     print('El poder de la comprension en datasets!')
 
@@ -302,13 +194,15 @@ def comprension_dataset():
     lista = [x for x in dataset]
     print(lista)
 
-    print('Del dataset original quedarnos unicamente con la columna nombres')
+    print('Del dataset original quedarnos unicamente con la columna id')
     # Ojo! Se podría usar x['id'] pero en el dataset puede existir el caso
     # donde no exista una fila con la key "id" y por eso se utiliza "get"
     # Cuando se utiliza "x.get" se puede especificar como segundo parámetro
     # que deseamos que retorno en caso de no encontrar la key buscada.
     # En este caso se esta eligiendo devolver un string vacio '' en caso
     # de no encontrar la key "id"
+    # En cada iteración se genera un diccionario con key=id, es una lista
+    # de diccionarios
     lista_reducida = [{'id': x.get('id', '')} for x in dataset]
     print(lista_reducida)
 
@@ -319,7 +213,7 @@ def comprension_dataset():
     print(lista_filtrada)
 
     print('Del dataset original eliminar aquellas filas con "id" invalido\
- y filtrar las columnas deseadas')
+ y quedarnos unicamente con la columna name')
     # Acá ponemos todo a prueba! solo se está dejando como salvedad
     # que si existe la key "id" debe existir la key "name"
     lista_filtrada_reducida = [{'name': x['name']} for x in dataset if x.get('id', '').isdigit() is True]
@@ -329,14 +223,12 @@ def comprension_dataset():
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
     # ----------------------------
-    # Uso de Numpy vs bucles vs listas
-    # queda para que el alumno chusmee
-    metodos_numpy_vs_list()
+    metodos_numpy()
     numpy_where_diff()
+    numpy_mask()
     # ----------------------------
     expresion_map_lambda()
-    lambda_vs_bucle()
     comprension_listas()
-    comprension_listas_vs_bucle()
+    # ----------------------------
     # Bonus Track - comprension listas + diccionarios
     comprension_dataset()
