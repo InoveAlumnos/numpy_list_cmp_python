@@ -164,7 +164,7 @@ def comprension_listas():
     print(lista)
 
     # Generar una lista que solo tome los números pares
-    # y descarte los números impares por "0"
+    # y descarte los números impares
     numeros = [1, 2, 4, 6, 8, 3, 5]
 
     # Método tradicional con bucle
