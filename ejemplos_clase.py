@@ -4,7 +4,7 @@ Numpy [Python]
 Ejemplos de clase
 ---------------------------
 Autor: Inove Coding School
-Version: 1.2
+Version: 1.3
 
 Descripcion:
 Programa creado para mostrar ejemplos prácticos de los visto durante la clase
@@ -12,7 +12,7 @@ Programa creado para mostrar ejemplos prácticos de los visto durante la clase
 
 __author__ = "Inove Coding School"
 __email__ = "alumnos@inove.com.ar"
-__version__ = "1.1"
+__version__ = "1.3"
 
 import numpy as np
 import time
@@ -47,7 +47,13 @@ def numpy_where_diff():
     v1 = np.asanyarray(l1)
 
     # Crear un nuevo array que solo tengo los numeros
-    # pares del array numy
+    # mayores a 3 del array numy y los demás reemplazar por cero
+    # where(condicion, returno verdadero, retorno falso)
+    where_v1 = np.where(v1 > 3, v1, 0)
+    print(where_v1)
+
+    # Crear un nuevo array que solo tengo los numeros
+    # pares del array numy y los demás reemplazar por cero
     # where(condicion, returno verdadero, retorno falso)
     where_v1 = np.where((v1 % 2) == 0, v1, 0)
     print(where_v1)
@@ -60,6 +66,13 @@ def numpy_mask():
 
     # Crear un array numpy
     v1 = np.array([1, 2, 4, 7])
+
+    # Crear la máscara para solo quedarnos con
+    # los números mayores a 1
+    mask_one = v1 > 1
+    v1_one = v1[mask_one]
+    
+    print(v1_one)
 
     # Crear la máscara para solo quedarnos con
     # los números pares
@@ -212,8 +225,8 @@ def comprension_dataset():
     lista_filtrada = [x for x in dataset if x.get('id', '').isdigit() is True]
     print(lista_filtrada)
 
-    print('Del dataset original eliminar aquellas filas con "id" invalido\
- y quedarnos unicamente con la columna name')
+    print('Del dataset original eliminar aquellas filas con "id" invalido')
+    print('y quedarnos unicamente con la columna name')
     # Acá ponemos todo a prueba! solo se está dejando como salvedad
     # que si existe la key "id" debe existir la key "name"
     lista_filtrada_reducida = [{'name': x['name']} for x in dataset if x.get('id', '').isdigit() is True]

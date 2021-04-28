@@ -4,7 +4,7 @@ Numpy [Python]
 Ejercicios de práctica
 ---------------------------
 Autor: Inove Coding School
-Version: 1.2
+Version: 1.3
 
 Descripcion:
 Programa creado para poner a prueba los conocimientos
@@ -13,10 +13,9 @@ adquiridos durante la clase
 
 __author__ = "Inove Coding School"
 __email__ = "alumnos@inove.com.ar"
-__version__ = "1.2"
+__version__ = "1.3"
 
 import numpy as np
-import math
 
 
 def ej1():
@@ -71,7 +70,7 @@ def ej2():
 
 
 def ej3():
-    # Práctica de comprensión de listas
+    print('Práctica de comprensión de listas')
     # 1)
     # Generar una lista a partir de comprensión de listas,
     # esta lista generada deberá tener un tamaño de 11
@@ -102,8 +101,6 @@ def ej3():
     # https://docs.python.org/3/library/random.html
 
     # dias_mes = [.....]
-
-    pass
 
 
 def ej4():
@@ -155,11 +152,10 @@ def ej5():
     # dentro de "id_validos"
 
     # personal_valido = [.....]
-    pass
 
 
 def ej6():
-    # Ejercicio de funciones Numpy
+    print('Ejercicio de funciones Numpy')
     # Arme un array con el método np.arange
     # el cual este acotado entre 0 y 1000
     # De dicho array calcular las siguientes operaciones:
@@ -184,7 +180,6 @@ def ej6():
     # bastante para saber si un número es múltiplo de "2"
 
     # nuevo_array = ....
-    pass
 
 
 if __name__ == '__main__':
