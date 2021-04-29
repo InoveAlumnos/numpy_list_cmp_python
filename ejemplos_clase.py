@@ -14,9 +14,11 @@ __author__ = "Inove Coding School"
 __email__ = "alumnos@inove.com.ar"
 __version__ = "1.3"
 
-import numpy as np
 import time
 import random
+
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def metodos_numpy():
@@ -141,6 +143,15 @@ def comprension_listas():
     for x in range(10):
         valor = 2*x
         lista.append(valor)
+
+    print(lista)
+
+    lista_generada = [2*x for x in range(10)]
+    
+    fig = plt.figure()
+    ax = fig.add_subplot()
+    ax.plot(range(10), lista_generada)
+    plt.show()
 
     # Generar una nueva lista, utilizar el rango para
     # iterar cierta cantidad de veces (definir el tamaño)
