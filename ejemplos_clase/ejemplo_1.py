@@ -37,7 +37,13 @@ def numpy_where_diff():
     v1 = np.asanyarray(l1)
 
     # Crear un nuevo array que solo tengo los numeros
-    # pares del array numy
+    # mayores a 3 del array numy y los demás reemplazar por cero
+    # where(condicion, returno verdadero, retorno falso)
+    where_v1 = np.where(v1 > 3, v1, 0)
+    print(where_v1)
+
+    # Crear un nuevo array que solo tengo los numeros
+    # pares del array numy y los demás reemplazar por cero
     # where(condicion, returno verdadero, retorno falso)
     where_v1 = np.where((v1 % 2) == 0, v1, 0)
     print(where_v1)
@@ -52,6 +58,13 @@ def numpy_mask():
 
     # Crear un array numpy
     v1 = np.array([1, 2, 4, 7])
+
+    # Crear la máscara para solo quedarnos con
+    # los números mayores a 1
+    mask_one = v1 > 1
+    v1_one = v1[mask_one]
+    
+    print(v1_one)
 
     # Crear la máscara para solo quedarnos con
     # los números pares

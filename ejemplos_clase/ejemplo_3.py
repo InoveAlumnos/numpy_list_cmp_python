@@ -4,6 +4,7 @@
 # Autor: Inove Coding School
 # Version: 2.0
 
+import matplotlib.pyplot as plt
 import random
 
 def comprension_listas_generadores():
@@ -26,6 +27,17 @@ def comprension_listas_generadores():
     for x in range(10):
         valor = 2*x
         lista.append(valor)
+
+    print(lista)
+
+    # Método con comprension de listas
+    lista_generada = [2*x for x in range(10)]
+    
+    # Gráfico
+    fig = plt.figure()
+    ax = fig.add_subplot()
+    ax.plot(range(10), lista_generada)
+    plt.show()
 
     # Generar una nueva lista, utilizar el rango para
     # iterar cierta cantidad de veces (definir el tamaño)
@@ -68,7 +80,7 @@ def comprension_listas_filtrado():
     print(lista)
 
     # Generar una lista que solo tome los números pares
-    # y descarte los números impares por "0"
+    # y descarte los números impares
     numeros = [1, 2, 4, 6, 8, 3, 5]
 
     # Método tradicional con bucle
@@ -121,8 +133,8 @@ def comprension_dataset():
     lista_filtrada = [x for x in dataset if x.get('id', '').isdigit() is True]
     print(lista_filtrada)
 
-    print('Del dataset original eliminar aquellas filas con "id" invalido\
- y quedarnos unicamente con la columna name')
+    print('Del dataset original eliminar aquellas filas con "id" invalido')
+    print('y quedarnos unicamente con la columna name')
     # Acá ponemos todo a prueba! solo se está dejando como salvedad
     # que si existe la key "id" debe existir la key "name"
     lista_filtrada_reducida = [{'name': x['name']} for x in dataset if x.get('id', '').isdigit() is True]

@@ -29,6 +29,6 @@ if __name__ == '__main__':
 
     # ¿Ya terminaron el ejercicio? ¿Por qué no prueban
     # hacer negativo alguno de los números de la lista?
-    # ¿Qué sucede con isdigit? Sorprendente no?  
+    # ¿Qué sucede con isdigit? Sorprendente no?
 
     print("terminamos")

@@ -40,6 +40,6 @@ if __name__ == '__main__':
     # TIP: Utilizar el operador "in" para chequear si un ID de accesos está
     # dentro de "id_validos"
 
-    # personal_valido = [.....] 
+    # personal_valido = [.....]
 
     print("terminamos")
