@@ -19,8 +19,8 @@ es realizar el código lo más simple, ordenado y limpio posible,
 no utilizar bucles donde no haga falta, no "re inventar" una función
 que ya dispongamos de Python. El objetivo es:
 
-1) Generar una lista 3 numéros aleatorios con random (pueden repetirse),
-    que estén comprendidos entre 1 y 10 inclusive
+1) Generar una lista de 3 numéros aleatorios con random (pueden repetirse),
+    estos 3 nuḿeros deben estar comprendidos entre 1 al 10 inclusive.
     (NOTA: utilizar comprension de listas tal como se hizo en clase)
 2) Luego de generar la lista sumar los números y ver si el resultado
     de la suma es menor o igual a 21
